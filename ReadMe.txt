@@ -2,16 +2,6 @@
 
 A FastAPI-based web application that uses computer vision and deep learning to recognize grocery store products.
 
-
-## Tech Stack
-
-- **Backend Framework**: FastAPI
-- **Deep Learning**: PyTorch, torchvision
-- **Computer Vision**: ResNet-50, PIL/Pillow
-- **Server**: Uvicorn (ASGI server)
-- **Data Validation**: Pydantic
-- **Database**: SQL
-
 ## Prerequisites
 
 - Python 3.8 or higher
@@ -227,4 +217,4 @@ pip freeze > requirements.txt
 - Gabriel Rivera
 - Will Andrews
 - Gabe Valladares
-- Florida State University 
+
