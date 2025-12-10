@@ -6,89 +6,99 @@ A FastAPI-based web application that uses computer vision and deep learning to r
 
 - Python 3.8 or higher
 - pip (Python package manager)
-- Git (optional, for cloning)
 
+## Getting Started
+
+### Download and Extract the Project
+
+1. **Download the project archive**
+   - Download `Final.tar.gz` from the project repository
+
+2. **Extract the archive**
+
+   **Linux/macOS:**
+   ```bash
+   tar -xzf Final.tar.gz
+   cd Final
+   ```
+
+   **Windows (using PowerShell or Command Prompt):**
+   ```cmd
+   tar -xzf Final.tar.gz
+   cd Final
+   ```
+
+   **Windows (using 7-Zip or WinRAR):**
+   - Right-click `Final.tar.gz` → Extract Here
+   - Navigate to the extracted `Final` folder
+
+## Project Structure
+
+```
+Final/
+├── app/
+│   ├── __init__.py
+│   ├── main.py                 # Application entry point
+│   ├── model.py                # ProductClassifier stub
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── routes.py           # FastAPI routes and endpoints
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── schemas.py          # Pydantic models and ProductClassifier
+│   └── services/
+│       ├── __init__.py
+│       ├── database.py         # SQLite database service
+│       └── vision.py           # Image processing and classification
+├── data/
+│   ├── products.csv            # Product catalog data
+│   └── products.db             # SQLite database (auto-generated)
+├── models/                      # Directory for trained model weights
+├── scripts/
+│   └── train_stub.py           # Training script placeholder
+├── requirements.txt             # Python dependencies
+└── ReadMe.txt                   # This file
+```
 
 ## Installation
 
-### Windows (WSL/Ubuntu)
+### Step 1: Create a Virtual Environment
 
-1. **Navigate to project directory**
-   bash
-   cd /mnt/c/Users/gabri/Desktop/Final/Final
-   
+**Linux/macOS:**
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-2. **Create a virtual environment**
-   bash
-   python3 -m venv .venv
-   
+**Windows:**
+```cmd
+python -m venv .venv
+.venv\Scripts\activate
+```
 
-3. **Activate the virtual environment**
-   bash
-   source .venv/bin/activate
-   
+### Step 2: Update pip
 
-4. **Update pip**
-   bash
-   pip install --upgrade pip
-  
+```bash
+pip install --upgrade pip
+```
 
-5. **Install system dependencies (if needed)**
-   bash
-   sudo apt-get update
-   sudo apt-get install -y libgomp1 libopenblas-dev
-   
+### Step 3: Install Dependencies
 
-6. **Install PyTorch (CPU version)**
-   bash
-   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-   
+```bash
+pip install -r requirements.txt
+```
 
-7. **Install other project dependencies**
-   bash
-   pip install -r requirements.txt
-   
-   
-   If you don't have a `requirements.txt`, install manually:
-  
-   pip install fastapi uvicorn pydantic pillow numpy python-multipart
-   
+**Note:** The `requirements.txt` includes all necessary packages including PyTorch. If you encounter issues with PyTorch installation, you may need to install it separately:
 
-Windows (Command Prompt)
+**For CPU-only (Linux/macOS/Windows):**
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+```
 
- **Note**: It's recommended to move your project out of OneDrive to avoid permission issues.
-
-1. **Move project out of OneDrive (Optional but Recommended)**
-   cmd
-   cd C:\Users\gabri\Desktop
-   mkdir Projects
-   xcopy /E /I C:\Users\gabri\OneDrive\Desktop\Final\Final Projects\Final
-   cd Projects\Final
-   
-
-2. **Create a virtual environment**
-   cmd
-   python -m venv .venv
-   
-
-3. **Activate the virtual environment**
-   cmd
-   .venv\Scripts\activate
-   
-
-4. **Update pip**
-   cmd
-   python -m pip install --upgrade pip
-   
-
-5. **Install PyTorch (CPU version)**
-    cmd
-   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-   
-
-6. **Install other project dependencies**
-   cmd
-   pip install -r requirements.txt
+**For GPU support (CUDA):**
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
     
 
 ## Running the Application
