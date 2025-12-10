@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific - Large files
+*.db
+*.log
+*.pth
+models/*.pth
+models/*.txt
+data/*.db
+data/*.log
+data/grocery_images/
+data/grocery_images_sample/
+data/grocery_images_fast/
+
+# Large datasets (keep structure, ignore images)
+banana_classification/train/
+banana_classification/valid/
+banana_classification/test/
+images/*/
+
+# Archives
+*.tar.gz
+*.zip
+*.tar
+
+# Temporary files
+~$*
+*.tmp
