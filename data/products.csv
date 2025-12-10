@@ -1,6 +1,0 @@
-product_name,category,aisle,section,price,stock
-banana,produce,1,front-right,0.29,true
-apple,produce,1,front-left,0.49,true
-cereal,breakfast,5,middle-left,3.99,true
-milk,dairy,3,back-right,2.99,false
-
